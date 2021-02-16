@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { environment } from 'src/environment.default';
+import { environment } from 'src/environment.local';
 
 var mysql = require('mysql');
 
@@ -8,6 +8,7 @@ export class MysqlService {
 
     private conn;
     private lastError: string;
+    private connected: boolean = false;
 
     constructor() {
         this.conn = mysql.createConnection(environment.database);
@@ -17,18 +18,24 @@ export class MysqlService {
         return new Promise<void>((res, rej) => {
             this.conn.connect((err) => {
                 if(err) {
+                    this.connected = false;
                     this.lastError = err;
                     rej(err);
                 } else {
+                    this.connected = true;
                     res();
                 }
             });
         });
     }
 
-    query(q: string): Promise<any> {
+    public isConnected() {
+        return this.connected;
+    }
+
+    query(q: string, values?: any[]): Promise<any> {
         return new Promise<void>((res, rej) => {
-            this.conn.query(q, (err, resp) => {
+            this.conn.query(q, values, (err, resp) => {
                 if(err) {
                     rej(err);
                 } else {
