@@ -1,2 +1,3 @@
 # Anorest
-Restful api for Anope services with Mysql
+
+Anope rest services (NesJS)
