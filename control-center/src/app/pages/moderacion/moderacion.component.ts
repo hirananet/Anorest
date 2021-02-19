@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModeracionComponent implements OnInit {
 
+  public moderaciones: any[];
+
   constructor() { }
 
   ngOnInit(): void {

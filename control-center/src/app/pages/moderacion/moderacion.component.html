@@ -1,6 +1,28 @@
 <main>
   <header>
-    <b>Moderación</b>: desde aquí puedes ver los canales en los que tienes rango half-op o superior.
+    <b>Moderación</b>: desde aquí puedes ver los canales en los que tienes algún rango asignado.
   </header>
-
+  <p-table [value]="moderaciones">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Canal</th>
+            <th>Dado por</th>
+            <th>Rango</th>
+            <th>Ultima vez visto</th>
+            <th>Fecha asignación</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-canal>
+        <tr>
+            <td>
+              {{canal.name}}
+              <span>{{canal.last_topic}}</span>
+            </td>
+            <td>{{canal.time_registered}}</td>
+            <td>{{canal.last_used}}</td>
+            <td>{{canal.last_topic_time}}</td>
+            <td>{{canal.last_topic_setter}}</td>
+        </tr>
+    </ng-template>
+  </p-table>
 </main>
