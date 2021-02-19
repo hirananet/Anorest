@@ -2,5 +2,55 @@
   <header>
     <b>Cuenta</b>: en esta pantalla podrás gestionar los datos de tu perfil, como la contraseña, el avatar, v-host, etc.
   </header>
-
+  <form>
+    <div class="column">
+      <h3>Configuración</h3>
+      <div class="form-group">
+        <label>Cuenta</label>
+        <input type="text" placeholder="Alex-" disabled/>
+      </div>
+      <div class="form-group">
+        <label>Avatar</label>
+        <input type="text" placeholder="urlAvatar" />
+        <img src="https://thira.tandilserver.com/avatar?usr=Alex" class="preview" style="width: 50px"/>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" placeholder="email" />
+      </div>
+      <div class="form-group">
+        <label>Cuenta confirmada</label>
+        <span class="label yes">SI</span>
+        <span class="label no">NO</span>
+      </div>
+      <div class="form-group">
+        <label>Auto-op</label>
+        <input type="checkbox" checked />
+      </div>
+      <div class="form-group">
+        <label>Ocultar email</label>
+        <input type="checkbox" checked />
+      </div>
+      <button>Guardar</button>
+    </div>
+    <div class="column">
+      <h3>Datos</h3>
+      <div class="data-group">
+        <label>Alias</label>
+        <span>5</span>
+      </div>
+      <div class="data-group">
+        <label>Información</label>
+        <span>35 registros</span>
+      </div>
+      <div class="data-group">
+        <label>Creados</label>
+        <span>3 canales</span>
+      </div>
+      <div class="data-group">
+        <label>Miembro de:</label>
+        <span>35 canales</span>
+      </div>
+    </div>
+  </form>
 </main>

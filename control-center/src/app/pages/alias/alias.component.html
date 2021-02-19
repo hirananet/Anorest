@@ -2,5 +2,35 @@
   <header>
     <b>Alias</b>: desde aquí puedes ver la lista de alias que tienes agrupados.
   </header>
-
+  <p-table [value]="alias">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nick</th>
+            <th>Último quit</th>
+            <th>Último vhost</th>
+            <th>Último uso</th>
+            <th>Alias expira?</th>
+            <th>Vhost por</th>
+            <th>Registrado</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-alia>
+        <tr>
+            <td>{{alia.nick}}</td>
+            <td>{{alia.last_quit}}</td>
+            <td>{{alia.last_usermask}}</td>
+            <td>{{alia.last_seen}}</td>
+            <td>
+              <span class="label" *ngIf="alia.NS_NO_EXPIRE === '1'">
+                NO
+              </span>
+              <span class="label" *ngIf="alia.NS_NO_EXPIRE !== '1'">
+                SI
+              </span>
+            </td>
+            <td>{{alia.vhost_creator}}</td>
+            <td>{{alia.time_registered}}</td>
+        </tr>
+    </ng-template>
+  </p-table>
 </main>

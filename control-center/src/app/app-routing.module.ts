@@ -23,7 +23,7 @@ const routes: Routes = [
     path: 'alias', component: AliasComponent
   },
   {
-    path: 'servicio', component: ServicioComponent
+    path: 'servicios', component: ServicioComponent
   }
 ];
 

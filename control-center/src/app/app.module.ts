@@ -8,6 +8,7 @@ import { CanalesComponent } from './pages/canales/canales.component';
 import { ModeracionComponent } from './pages/moderacion/moderacion.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { CuentaComponent } from './pages/cuenta/cuenta.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CuentaComponent } from './pages/cuenta/cuenta.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
